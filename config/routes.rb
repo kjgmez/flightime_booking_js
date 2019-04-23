@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :coaches
   resources :locations
   resources :users do
