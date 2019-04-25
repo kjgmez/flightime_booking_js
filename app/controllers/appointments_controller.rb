@@ -1,7 +1,6 @@
 class AppointmentsController < ApplicationController
   def index
-    @user = current_user
-    @flights = @user.appointments
+    @appointments = current_user.appointments
   end
   def new
     @appointment= Appointment.new
@@ -17,7 +16,7 @@ class AppointmentsController < ApplicationController
   end
   def delete
     appointment = current_user.appointments.find(params[:id])
-    appointment ? appointment.destroy : redirect_to user_appointments_path(current_user), error: "The appointment does not exists"
+    appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not exists")
     redirect_to user_appointments_path(current_user)
   end
 end
