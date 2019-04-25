@@ -3,17 +3,17 @@ class AppointmentsController < ApplicationController
     @appointments = current_user.appointments
   end
   def new
-    @appointment= Appointment.new
+    @appointment = current_user.appointments.build
   end
   def create
     @appointment = Appointment.new(appointment_params)
-    redirect_to appointment_path(@appointment)
+    redirect_to user_appointment_path(@appointment)
   end
   def show
     @appointment = Appointment.find(params[:id])
   end
   def edit
-    @appointment = Appointment.find(params[:id])
+    @appointment = current_user.appointments.find(params[:id])
   end
   def update
     @appointment = Appointment.find(params[:id])
