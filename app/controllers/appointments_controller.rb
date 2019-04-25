@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
     @appointments = current_user.appointments
   end
   def new
-    @appointment = current_user.appointments.build
+    @appointment = current_user.appointments.new
   end
   def create
     @appointment = Appointment.new(appointment_params)

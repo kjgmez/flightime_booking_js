@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :appointments, only: [:index, :new, :show]
+    resources :appointments
   end
 
   root to: "users#show"

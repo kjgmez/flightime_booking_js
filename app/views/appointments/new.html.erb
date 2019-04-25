@@ -1,3 +1,12 @@
 Create an appointment
 
-<%= render "form", locals: {appointment: @appointment, user: @appointment.user} %>
+
+<%#= render "form", locals: {appointment: @appointment, user: @appointment.user} %>
+
+<%= form_for [@appointment.user, @appointment] do |f|  %>
+  <%= f.collection_select :location_id, Location.order(:name), :id, :name, include_blank: true %>
+  <%= f.grouped_collection_select :coach_id, Location.order(:name), :coaches, :name, :id, :name_and_level, include_blank: true %>
+  <%= f.datetime_select :arrival_time, prompt: {day: "Choose Day", month: "Choose Month", year: "Choose Year", hour: "Please Choose",
+                                                minute: "Please Choose"}, ampm: true, start_year: 2019, order: [:day, :month, :year, :hour, :minute] %>
+  <%= f.submit "Create Appointment" %>
+<% end %>
