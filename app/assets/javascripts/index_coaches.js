@@ -1,17 +1,17 @@
 jQuery(function() {
-    let choaches;
+    let coaches;
     coaches = $('#appointment_coach_id').html();
     console.log(coaches);
     byebug
     return $('#appointment_location_id').change(function() {
-        var country, options;
-        country = $('#person_country_id :selected').text();
-        options = $(states).filter("optgroup[label=" + country + "]").html();
+        let location, options;
+        location = $('#appointment_location_id :selected').text();
+        options = $(coaches).filter("optgroup[label=" + location + "]").html();
         console.log(options);
         if (options) {
-            return $('#person_state_id').html(options);
+            return $('#appointment_coach_id').html(options);
         } else {
-            return $('#person_state_id').empty();
+            return $('#appointment_coach_id').empty();
         }
     });
 });
