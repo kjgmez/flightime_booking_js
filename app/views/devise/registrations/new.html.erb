@@ -4,15 +4,15 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: "name" %>
+    <%= f.text_field :name, autofocus: true, placeholder: "name", required: true %>
   </div>
   <div class="field">
   <%= f.label :balance %><br />
-  <%= f.number_field :balance, autofocus: true, placeholder: "minutes you want to buy" %>
+  <%= f.number_field :balance, autofocus: true, placeholder: "minutes you want to buy", required: true %>
   </div>
     <div class="field">
     <%= f.label :level %><br />
-    <%= f.number_field :level, autofocus: true, placeholder: "what level are you?" %>
+    <%= f.number_field :level, autofocus: true, placeholder: "what level are you?", required: true %>
   </div>
   <div class="field">
     <%= f.label :username %><br />

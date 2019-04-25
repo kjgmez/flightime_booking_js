@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :coaches
-  resources :locations
+
+  resources :locations, only: [:index, :show] do
+    resources :coaches, only: [:index, :show]
+  end
+
   resources :users do
-    resource :appointments, only: [:new, :show, :index]
+    resources :appointments, only: [:index, :new, :show]
   end
 
   root to: "users#show"
