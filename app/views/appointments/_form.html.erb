@@ -1,5 +1,5 @@
 <p id="yoyo"></p>
 <%= form_for :appointment do |f|  %>
   <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: true %>
-  <%= f.select :location_id.coaches, Coach.all, :id, :name, include_blank: true %>
+  <%= f.collection_select :coach_id, Coach.all, :id, :name, include_blank: true %>
 <% end %>
