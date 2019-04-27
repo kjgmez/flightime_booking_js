@@ -11,6 +11,7 @@ class AppointmentsController < ApplicationController
     redirect_to user_appointment_path(@appointment.user, @appointment)
   end
   def show
+    byebug
     @appointment = Appointment.find(params[:id])
   end
   def edit
@@ -28,6 +29,6 @@ class AppointmentsController < ApplicationController
   private
 
     def appointment_params
-      params.require(:appointment).permit(:location_id, :coach_id, :arrival_time)
+      params.require(:appointment).permit(:location_id, :coach_id, :arrival_time, :minutes)
     end
 end
