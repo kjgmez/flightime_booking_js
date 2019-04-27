@@ -1,0 +1,4 @@
+<h1>You can fly at any of the following locations</h1>
+<% @locations.each do |location| %>
+  <h2><%= link_to location.name, location_path(location) %> <br></h2>
+<% end %>
