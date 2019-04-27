@@ -4,3 +4,5 @@
     <%= link_to "View Appointment", user_appointment_path(flight.user, flight) %>
     <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %></div>
 <% end %>
+
+<%= link_to "New appointment", new_user_appointment_path(current_user) %>
