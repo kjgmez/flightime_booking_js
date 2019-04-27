@@ -10,6 +10,5 @@
                                                   minute: "Please Choose"}, ampm: true, start_year: 2019, order: [:day, :month, :year, :hour, :minute] %></div>
   <div><%= f.label "Flight duration in minutes" %><br>
     <%= f.time_select :minutes, {discard_hour: true, minute_step: 15} %></div>
-  <% current_page?() %>
   <%= f.submit "Create Appointment" %>
 <% end %>
