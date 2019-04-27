@@ -1,8 +1,8 @@
 class CoachesController < ApplicationController
   def index
-    @locations = Location.all
+    @coaches = Coach.all
   end
   def show
-    @location = Location.find(params[:id])
+    @coach = Coach.find(params[:id])
   end
 end
