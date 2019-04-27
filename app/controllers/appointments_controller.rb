@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointments = current_user.appointments
+    @appointments = current_user.appointments.all
   end
   def new
     @appointment = current_user.appointments.new
@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
     redirect_to user_appointment_path(@appointment.user, @appointment)
   end
   def show
-    byebug
+    #byebug
     @appointment = Appointment.find(params[:id])
   end
   def edit
@@ -23,7 +23,7 @@ class AppointmentsController < ApplicationController
   def delete
     appointment = current_user.appointments.find(params[:id])
     appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not exists")
-    redirect_to user_appointments_path(current_user)
+    redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"
   end
 
   private

@@ -1,14 +1,14 @@
 <p id="yoyo"></p>
 
 <%= form_for [@appointment.user, @appointment] do |f|  %>
-  <%= f.label "Location" %><br>
-  <%= f.collection_select :location_id, Location.order(:name), :id, :name, include_blank: true %>
-  <%= f.label "Coach" %><br>
-  <%= f.grouped_collection_select :coach_id, Location.order(:name), :coaches, :name, :id, :name_and_level, include_blank: true %>
-  <%= f.label "Choose the date and arrival time for your booking" %><br>
-  <%= f.datetime_select :arrival_time, prompt: {day: "Choose Day", month: "Choose Month", year: "Choose Year", hour: "Please Choose",
-      minute: "Please Choose"}, ampm: true, start_year: 2019, order: [:day, :month, :year, :hour, :minute] %>
-  <%= f.label "Flight duration in minutes" %><br>
-  <%= f.text_field :minutes %>
+  <div><%= f.label "Location" %><br>
+    <%= f.collection_select :location_id, Location.order(:name), :id, :name, include_blank: true %></div>
+  <div><%= f.label "Coach" %><br>
+    <%= f.grouped_collection_select :coach_id, Location.order(:name), :coaches, :name, :id, :name_and_level, include_blank: true %></div>
+  <div><%= f.label "Choose the date and arrival time for your booking" %><br>
+    <%= f.datetime_select :arrival_time, prompt: {day: "Choose Day", month: "Choose Month", year: "Choose Year", hour: "Please Choose",
+                                                  minute: "Please Choose"}, ampm: true, start_year: 2019, order: [:day, :month, :year, :hour, :minute] %></div>
+  <div><%= f.label "Flight duration in minutes" %><br>
+    <%= f.time_select :minutes, {discard_hour: true, minute_step: 15} %></div>
   <%= f.submit "Create Appointment" %>
 <% end %>

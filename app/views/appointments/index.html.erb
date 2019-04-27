@@ -1,4 +1,5 @@
-<% @flights.each do |flight| %>
-  <%= flight.arrival_time %>
+<% @appointments.each do |flight| %>
+  <%= flight.location.name %><br>
+  <%= flight.arrival_time %><br>
   <%= flight.minutes %>
 <% end %>
