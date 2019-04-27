@@ -6,8 +6,9 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.new
   end
   def create
-    @appointment = Appointment.new(appointment_params)
-    redirect_to user_appointment_path(@appointment)
+    @appointment = current_user.appointments.new(appointment_params)
+    @appointment.save
+    redirect_to user_appointment_path(@appointment.user, @appointment)
   end
   def show
     @appointment = Appointment.find(params[:id])
