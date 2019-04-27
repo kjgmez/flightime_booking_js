@@ -5,4 +5,3 @@ Blocked time : <%= @appointment.minutes.strftime("%M minutes") %><br>
 <%= link_to "Edit", edit_user_appointment_path(@appointment)%>
 <%= link_to "Delete", user_appointment_path(@appointment), method: :delete, data: {confirm: "Deleting appointment, please confirm"} %>
 <%= link_to "Back to all appointmets", user_appointments_path(@appointment.user) %>
-
