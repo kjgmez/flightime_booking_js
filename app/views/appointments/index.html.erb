@@ -2,7 +2,8 @@
   <div><%= flight.location.name %><br>
     <%= flight.arrival_time.strftime("%B %d, %Y") %><br>
     <%= link_to "View Appointment", user_appointment_path(flight.user, flight) %>
-    <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %></div>
+    <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %> <br></div>
 <% end %>
 
-<%= link_to "New appointment", new_user_appointment_path(current_user) %>
+<div><br><%= link_to "New appointment", new_user_appointment_path(current_user) %><br>
+  <%= link_to "Back to profile", user_path(current_user) %></div>

@@ -1,0 +1,10 @@
+<h1> This is <%= @coach.name %></h1>
+
+<h2>This coach is cleared to train level <%= @coach.level %> and under </h2>
+<h3>They are apart of the team at our <%= link_to @coach.location.name, location_path(@coach.location) %> location</h3>
+
+<h4> To book a flight with him click <%= link_to "here", new_user_appointment_path(current_user) %> and choose <%= @coach.location.name %></h4>
+<h4> To view all other locations click <%= link_to "here", locations_path %></h4>
+<%= link_to "Back to profile", user_path(current_user) %><br>
+<%= link_to "Back to booked time", user_appointments_path(current_user) %>
+

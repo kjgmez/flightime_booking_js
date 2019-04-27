@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
   end
   def create
     @appointment = current_user.appointments.new(appointment_params)
+    #@appointment.user.update_balance(@appointment.minutes.strftime("%M").to_i)
     @appointment.save
     redirect_to user_appointment_path(@appointment.user, @appointment)
   end
