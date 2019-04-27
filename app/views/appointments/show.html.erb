@@ -1,6 +1,7 @@
 Location: <%= @appointment.location.name %><br>
 Coach name: <%= @appointment.coach.name %><br>
-Arrival time: <%= @appointment.arrival_time %><br>
+Slot booked for: <%= @appointment.arrival_time.strftime("%B %d, %Y Arrive at %I:%M%P") %> flying at: <%= (@appointment.arrival_time.to_time + 1.hour).strftime("%I:%M%P") %> <br>
+Blocked time :
 <%= link_to "Edit", edit_user_appointment_path(@appointment)%>
 <%= link_to "Delete", user_appointment_path(@appointment), method: :delete, data: {confirm: "Deleting appointment, please confirm"} %>
 <%= link_to "Back to all appointmets", user_appointments_path(@appointment.user) %>
