@@ -1,0 +1,15 @@
+<h1>Welcome to <%= @location.name %> Indoor Skydiving</h1>
+
+<h2>Meet our team of coaches</h2>
+<% @location.coaches.each do |coach| %>
+  <%= "#{coach.name}, certified to coach level #{coach.level} students" %><br>
+<% end %>
+
+<h3>Joining us for a flight?</h3>
+
+<%= link_to "Book time", new_user_appointment_path(current_user) %><br>
+
+<h3>Other account actions</h3>
+<%= link_to "Back to Profile", user_path(current_user) %> <br>
+<%= link_to "Booked times", user_appointments_path(current_user) %><br>
+<%= link_to "Back to locations", locations_path %><br>
