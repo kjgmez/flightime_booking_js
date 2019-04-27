@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
     @appointment.update(appointment_params)
     redirect_to user_appointments_path(@appointment.user, @appointment)
   end
-  def delete
+  def destroy
     appointment = current_user.appointments.find(params[:id])
     appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not exists")
     redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"

@@ -1,6 +1,6 @@
 <% @appointments.each do |flight| %>
-  <%= flight.location.name %><br>
-  <%= flight.arrival_time %><br>
-  <%= link_to "Detailed Appointment", user_appointment_path(flight.user, flight) %>
-  <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %>
+  <div><%= flight.location.name %><br>
+    <%= flight.arrival_time %><br>
+    <%= link_to "Detailed Appointment", user_appointment_path(flight.user, flight) %>
+    <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %></div>
 <% end %>
