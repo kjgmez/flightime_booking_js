@@ -24,10 +24,17 @@ module AppointmentsHelper
     redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment specified does not belong to you"
   end
 
-  def refresh_balance(appointment)
+  def refresh_balance_new(appointment)
     booked = appointment.minutes.strftime("%M").to_i
     balance = current_user.balance
     new_balance = balance - booked
+    current_user.update(balance: new_balance)
+  end
+
+  def refresh_balance_update(appointment)
+    booked = appointment.minutes.strftime("%M").to_i
+    balance = current_user.balance
+    new_balance = balance + booked
     current_user.update(balance: new_balance)
   end
 end

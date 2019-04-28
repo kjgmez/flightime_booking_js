@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
 
   def create
     appointment = current_user.appointments.create(appointment_params)
-    refresh_balance(appointment)
+    refresh_balance_new(appointment)
     redirect_to user_appointment_path(appointment.user.id, appointment.id)
   end
 
@@ -25,7 +25,9 @@ class AppointmentsController < ApplicationController
 
   def update
     appointment = find_appointment
+    refresh_balance_update(appointment)
     appointment.update(appointment_params)
+    refresh_balance_new(appointment)
     redirect_to user_appointments_path(appointment.user, appointment)
   end
 
