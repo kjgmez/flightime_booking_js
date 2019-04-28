@@ -1,11 +1,12 @@
 class AppointmentsController < ApplicationController
+
   before_action :authenticate_user!
 
   def index
     @appointments = current_user.appointments.all
   end
   def new
-    @appointment = current_user.appointments.new
+    @appointment = new_appointment
   end
 
   def create
@@ -17,19 +18,11 @@ class AppointmentsController < ApplicationController
 
   def show
     app = find_appointment
-    if app
-      @appointment = app
-    else
-      redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
-    end
+    valid_user(app)
   end
   def edit
-    app = find_appointment rescue nil
-    if app
-      @appointment = app
-    else
-      redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
-    end
+    app = find_appointment
+    valid_user(app)
   end
 
   def update
@@ -43,9 +36,4 @@ class AppointmentsController < ApplicationController
     redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"
   end
 
-  private
-
-    def appointment_params
-      params.require(:appointment).permit(:location_id, :coach_id, :arrival_time, :minutes)
-    end
 end
