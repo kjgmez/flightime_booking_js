@@ -8,7 +8,7 @@ module AppointmentsHelper
     if app
       @appointment = app
     else
-      redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
+      redirect_when_error
     end
   end
 
@@ -18,6 +18,10 @@ module AppointmentsHelper
 
   def appointment_params
     params.require(:appointment).permit(:location_id, :coach_id, :arrival_time, :minutes)
+  end
+
+  def redirect_when_error
+    redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment specified does not belong to you"
   end
 
 end

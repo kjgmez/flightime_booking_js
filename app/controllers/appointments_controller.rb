@@ -32,8 +32,8 @@ class AppointmentsController < ApplicationController
   end
   def destroy
     appointment = find_appointment
-    appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not belong to you")
-    redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"
+    appointment ? appointment.destroy : redirect_when_error
+    redirect_to user_appointments_path(current_user), alert: "Appointment Successfully Deleted"
   end
 
 end
