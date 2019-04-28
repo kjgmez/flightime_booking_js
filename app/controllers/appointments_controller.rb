@@ -1,5 +1,4 @@
 class AppointmentsController < ApplicationController
-
   before_action :authenticate_user!
 
   def index
@@ -30,6 +29,7 @@ class AppointmentsController < ApplicationController
     appointment.update(appointment_params)
     redirect_to user_appointments_path(appointment.user, appointment)
   end
+
   def destroy
     appointment = find_appointment
     appointment ? appointment.destroy : redirect_when_error
