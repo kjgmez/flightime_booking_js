@@ -33,6 +33,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     appointment = find_appointment
+    refresh_balance_update(appointment)
     appointment ? appointment.destroy : redirect_when_error
     redirect_to user_appointments_path(current_user), alert: "Appointment Successfully Deleted"
   end
