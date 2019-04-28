@@ -14,11 +14,20 @@ class AppointmentsController < ApplicationController
     redirect_to user_appointment_path(@appointment.user, @appointment)
   end
   def show
-    #byebug
-    @appointment = Appointment.find(params[:id])
+    app = Appointment.find(params[:id])
+    if current_user.id == app.user.id
+      @appointment = Appointment.find(params[:id])
+    else
+      redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
+    end
   end
   def edit
-    @appointment = current_user.appointments.find(params[:id])
+    app = current_user.appointments.find(params[:id]) rescue nil
+    if app
+      @appointment = current_user.appointments.find(params[:id])
+    else
+      redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
+    end
   end
   def update
     @appointment = Appointment.find(params[:id])
@@ -27,7 +36,7 @@ class AppointmentsController < ApplicationController
   end
   def destroy
     appointment = current_user.appointments.find(params[:id])
-    appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not exists")
+    appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not belong to you")
     redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"
   end
 
