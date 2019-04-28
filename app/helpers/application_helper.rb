@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def sign
-
+  def find_appointment
+    current_user.appointments.find(params[:id])
   end
 end

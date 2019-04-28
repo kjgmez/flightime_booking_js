@@ -7,35 +7,38 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = current_user.appointments.new
   end
+
   def create
-    @appointment = current_user.appointments.new(appointment_params)
+    appointment = current_user.appointments.new(appointment_params)
     #@appointment.user.update_balance(@appointment.minutes.strftime("%M").to_i)
-    @appointment.save
-    redirect_to user_appointment_path(@appointment.user, @appointment)
+    appointment.save
+    redirect_to user_appointment_path(appointment.user.id, appointment.id)
   end
+
   def show
-    app = Appointment.find(params[:id])
-    if current_user.id == app.user.id
-      @appointment = Appointment.find(params[:id])
+    app = find_appointment
+    if app
+      @appointment = app
     else
       redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
     end
   end
   def edit
-    app = current_user.appointments.find(params[:id]) rescue nil
+    app = find_appointment rescue nil
     if app
-      @appointment = current_user.appointments.find(params[:id])
+      @appointment = app
     else
       redirect_to user_appointments_path(current_user), alert: "This appointment does not belong to you"
     end
   end
+
   def update
-    @appointment = Appointment.find(params[:id])
-    @appointment.update(appointment_params)
-    redirect_to user_appointments_path(@appointment.user, @appointment)
+    appointment = find_appointment
+    appointment.update(appointment_params)
+    redirect_to user_appointments_path(appointment.user, appointment)
   end
   def destroy
-    appointment = current_user.appointments.find(params[:id])
+    appointment = find_appointment
     appointment ? appointment.destroy : (redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment does not belong to you")
     redirect_to user_appointments_path(current_user), alert: "Appointment Deleted"
   end
