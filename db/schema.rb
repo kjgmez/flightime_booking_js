@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_27_170351) do
+ActiveRecord::Schema.define(version: 2019_04_29_232850) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "user_id"
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(version: 2019_04_27_170351) do
     t.string "name"
     t.integer "balance"
     t.integer "level"
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.integer "expires_at"
+    t.boolean "expires"
+    t.string "refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
