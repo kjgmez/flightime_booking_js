@@ -7,9 +7,9 @@ class RegistrationsController < Devise::RegistrationsController
     binding.pry
 
     successfully_updated = if !is_google_account
-                             @user.update_with_password(params.require(:user).permit(:name, :balance, :level, :usern_ame, :email, :password, :password_confirmation, :current_password))
+                             @user.update_with_password(with_pass_params)
                            else
-                             @user.update_without_password(params.require(:user).permit(:name, :balance, :level, :user_name))
+                             @user.update_without_password(without_pass_params)
                            end
 
     if successfully_updated
@@ -20,6 +20,16 @@ class RegistrationsController < Devise::RegistrationsController
       render "edit"
     end
   end
+
+  private
+
+    def with_pass_params
+      params.require(:user).permit(:name, :balance, :level, :usern_ame, :email, :password, :password_confirmation, :current_password)
+    end
+
+    def without_pass_params
+      params.require(:user).permit(:name, :balance, :level, :user_name)
+    end
 
   protected
 
