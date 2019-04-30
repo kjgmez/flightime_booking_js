@@ -5,4 +5,5 @@ class Coach < ApplicationRecord
   def name_and_level
     "#{self.name}, Skill Level: #{self.level}"
   end
+
 end

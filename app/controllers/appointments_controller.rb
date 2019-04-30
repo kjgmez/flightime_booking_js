@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @appointments = current_user.appointments.all
+    @appointments = current_user.appointments.ordered_by_arrival_time
+    #byebug
   end
   def new
     @appointment = new_appointment

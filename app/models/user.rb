@@ -10,4 +10,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # def update_balance(time)
+  #   self.balance = self.balance - time
+  # end
+
 end
