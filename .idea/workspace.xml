@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+              <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -232,12 +232,12 @@
       <updated>1555986552969</updated>
       <workItem from="1555986554110" duration="33887000" />
       <workItem from="1556400455040" duration="575000" />
-      <workItem from="1556477065538" duration="20167000" />
+      <workItem from="1556477065538" duration="20464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54629000" />
+    <option name="totallyTimeSpent" value="54926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -250,7 +250,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="609" y="28" width="831" height="824" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31178707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -612,7 +611,7 @@
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
+          <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
         </state>
       </provider>
     </entry>
