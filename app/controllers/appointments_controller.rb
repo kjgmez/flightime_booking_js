@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     @appointments = current_user.appointments.ordered_by_arrival_time
     #byebug
@@ -10,9 +11,15 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    appointment = current_user.appointments.create(appointment_params)
-    refresh_balance_new(appointment)
-    redirect_to user_appointment_path(appointment.user.id, appointment.id)
+    #byebug
+    @appointment = current_user.appointments.build(appointment_params)
+    if @appointment.save
+      refresh_balance_new(@appointment)
+      redirect_to user_appointment_path(@appointment.user.id, @appointment.id)
+    else
+      flash.now[:alert] = @appointment.errors.full_messages.join(", ")
+      render :new
+    end
   end
 
   def show
