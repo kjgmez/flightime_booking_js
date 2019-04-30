@@ -21,7 +21,7 @@ module AppointmentsHelper
   end
 
   def redirect_when_error
-    redirect_to user_appointments_path(current_user), flash[:alert] = "The appointment specified does not belong to you"
+    redirect_to user_appointments_path(current_user), alert: "The appointment specified does not belong to you or does not exist"
   end
 
   def refresh_balance_new(appointment)
