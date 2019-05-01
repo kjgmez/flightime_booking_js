@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_232850) do
+ActiveRecord::Schema.define(version: 2019_05_01_233332) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "location_id"
+    t.integer "coach_id"
     t.datetime "arrival_time"
     t.datetime "minutes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "coach_id"
     t.index ["coach_id"], name: "index_appointments_on_coach_id"
     t.index ["location_id"], name: "index_appointments_on_location_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_04_29_232850) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_name"
     t.string "name"
     t.integer "balance"
     t.integer "level"
@@ -62,7 +61,6 @@ ActiveRecord::Schema.define(version: 2019_04_29_232850) do
     t.string "refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
 end
