@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
     @user = User.find(current_user.id)
     email_changed = @user.email != params[:user][:email]
     is_google_account = !@user.provider.blank?
-    binding.pry
+    #binding.pry
 
     successfully_updated = if !is_google_account
                              @user.update_with_password(with_pass_params)
