@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Flight Time booking
+Hello and thanks for trying out my software. 
+This is a mock hotel reservation application that runs on Ruby on Rails. 
+It offers rooms from two different hotels at exceptional prices. 
+Once you have registered, either through my site or GitHub, you can reserve as many rooms as you want, 
+as long as that room type is available. 
+To add a more realistic feel for the program, I even give you an 'estimated price' for your stay! 
+Enjoy my app, you'll never find these rooms at a better price!
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+To use this app, just clone this [repo](https://github.com/kjgmez/flight_time_booking).
 
-* System dependencies
+And then execute:
 
-* Configuration
+    $ bundle install
 
-* Database creation
+## Usage
 
-* Database initialization
+Step 1) Run: `rake db:migrate` after cloning the repository. <br />
+Step 2) Run: `rake db:seed` <br />
+Step 3) Run: `rails s`
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Bug reports and pull requests are welcome on GitHub at https://github.com/kjgmez/flight_time_booking. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Deployment instructions
+## License
 
-* ...
+The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the Easy Reservations project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/kjgmez/flight_time_booking/CODE_OF_CONDUCT.md).
