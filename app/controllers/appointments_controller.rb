@@ -3,8 +3,12 @@ class AppointmentsController < ApplicationController
 
 
   def index
-    @appointments = current_user.appointments.ordered_by_arrival_time
-    #byebug
+    if params[:user_id]
+      @appointments = current_user.appointments.ordered_by_arrival_time
+    else
+      @users = User.all
+      render "appointments"
+    end
   end
   def new
     @appointment = new_appointment

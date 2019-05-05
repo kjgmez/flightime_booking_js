@@ -7,6 +7,7 @@ class Appointment < ApplicationRecord
   validates :minutes, numericality: {greater_than: 0}
 
   scope :ordered_by_arrival_time, -> { order(arrival_time: :asc) }
+  scope :grouped_by_user, -> { group(user_id: :asc) }
   # scope :ordered_by_level, -> { order(level: :desc) }
 
 end

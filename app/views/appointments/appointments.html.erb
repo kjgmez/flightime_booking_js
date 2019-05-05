@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <div><%= user.name %><br>
+  <% user.appointments.each do |app| %>
+    <%= app.location.name %>
+    <%= app.arrival_time %><br>
+    <%  end %></div>
+<% end %>
