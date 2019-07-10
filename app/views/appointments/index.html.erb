@@ -1,8 +1,9 @@
 <% @appointments.each do |flight| %>
-  <div><%= flight.location.name %><br>
-    <%= flight.arrival_time.strftime("%B %d, %Y") %><br>
+  <h3><%= flight.location.name %><br></h3>
+  <div id="flight-<%= flight.id %>"><%= flight.arrival_time.strftime("%B %d, %Y, %I:%M %p").truncate(10) %></div><br>
+  <button class="js-more" data-id="<%= flight.id %>">More Info</button>
     <%= link_to "View Appointment", user_appointment_path(flight.user, flight) %>
-    <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %> <br></div>
+    <%= link_to "Edit Appointment", edit_user_appointment_path(flight.user, flight) %> <br>
 <% end %>
 
 <div><br><%= link_to "New appointment", new_user_appointment_path(current_user) %><br>

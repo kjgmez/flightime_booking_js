@@ -7,6 +7,10 @@ module AppointmentsHelper
   def valid_user(app)
     if app
       @appointment = app
+      respond_to do |format|
+        format.html { render :show }
+        format.json { render json: @appointment}
+      end
     else
       redirect_when_error
     end

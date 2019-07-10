@@ -33,6 +33,7 @@ gem 'dotenv-rails'
 gem 'pg'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'active_model_serializers'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
