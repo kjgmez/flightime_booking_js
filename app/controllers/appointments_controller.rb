@@ -3,16 +3,17 @@ class AppointmentsController < ApplicationController
 
 
   def index
-    if params[:user_id]
+    # binding.pry
+    # if params[:user_id]
       @appointments = current_user.appointments.ordered_by_arrival_time
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @appointments}
+        format.json { render json: @appointments.to_json}
       end
-    else
-      @users = User.all
-      render "appointments"
-    end
+    # else
+    #   @users = User.all
+    #   render "appointments"
+    # end
   end
 
   def new

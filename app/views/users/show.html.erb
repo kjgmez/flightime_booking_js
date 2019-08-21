@@ -3,5 +3,6 @@ Balance: <%= @user.balance %><br>
 Level: <%= @user.level %><br>
 <%= link_to 'Edit', edit_user_registration_path %><br>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %><br>
-<%= link_to 'Booked time', user_appointments_path(@user) %><br>
+<%= link_to 'Booked time', user_appointments_path(@user), {id:"booked_time_link", data:{user_id:@user.id}} %><br>
+<div id="show-appointments"></div>
 <%= link_to 'Available locations', locations_path %>
