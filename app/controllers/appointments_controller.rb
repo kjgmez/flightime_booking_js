@@ -14,6 +14,7 @@ class AppointmentsController < ApplicationController
       render "appointments"
     end
   end
+
   def new
     @appointment = new_appointment
   end
