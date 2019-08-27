@@ -23,16 +23,17 @@ $(document).ready(() => {
         fetch(`/users/${user}/appointments.json`)
             .then(res => res.json())
             .then(data => data.map( appt => {
-                $( "#booked_time_link" ).append(`<br> 
-                <button id="individual" data-id="${appt.id}" href="users/${user}/appointments/${appt.id}">${new Date(appt.arrival_time)}</button>`)
+                $( "#show-appointments" ).append(
+                    `<a onclick="" id="individual" href="${user}/appointments/${appt.id}">${new Date(appt.arrival_time)}</a><br>`)
             }))
         ;
     });
 });
 
 $(document).ready(() => {
-    $( "button#individual" ).click(function(event) {
+    $( "#individual" ).click(function(event) {
         event.preventDefault();
+        let link = $(this).attr('href');
         debugger;
     });
 });
