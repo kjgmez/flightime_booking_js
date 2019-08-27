@@ -4,7 +4,6 @@
     <list default="true" id="9d0b0c1b-f984-4508-8162-6e010bb924d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/appointment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/appointment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/appointment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="263">
+              <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -325,12 +324,12 @@
       <workItem from="1562713873997" duration="9146000" />
       <workItem from="1566255720273" duration="2596000" />
       <workItem from="1566401268975" duration="1514000" />
-      <workItem from="1566405770425" duration="24912000" />
+      <workItem from="1566405770425" duration="25747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114710000" />
+    <option name="totallyTimeSpent" value="115545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,6 +669,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index_coaches.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -677,15 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/appointment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="263">
+          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

@@ -26,18 +26,12 @@ $(document).ready(() => {
                 $( "#show-appointments" ).append(
                     `<li><a id="individual" href="${user}/appointments/${appt.id}">${new Date(appt.arrival_time)}</a></li><br>`)
             }))
-
-        ;
+            .then($( "#show-appointments" ).append(
+                `<li><a id="individual" href="${user}/appointments/new">Create an Appointment</li><br>`)
+            );
     });
 });
 
-$(document).ready(() => {
-    $( "#individual" ).click(function(event) {
-        event.preventDefault();
-        let link = $(this).attr('href');
-        debugger;
-    });
-});
 //
 // function test(data) {
 //     console.log(data)
