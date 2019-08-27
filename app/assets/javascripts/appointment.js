@@ -22,8 +22,8 @@ $(document).ready(() => {
         let user = $(this).attr('data-user-id');
         fetch(`/users/${user}/appointments.json`)
             .then(res => res.json())
-            .then(data => data.forEach( appt => {
-                $( "#booked_time_link" ).append(`<li>${appt["arrival_time"]}</li>`)
+            .then(data => data.map( appt => { {debugger}
+                $( "#booked_time_link" ).append(`<ul >${new Date(appt.arrival_time)}</ul>`)
             }))
         ;
     });
