@@ -24,8 +24,9 @@ $(document).ready(() => {
             .then(res => res.json())
             .then(data => data.map( appt => {
                 $( "#show-appointments" ).append(
-                    `<a onclick="" id="individual" href="${user}/appointments/${appt.id}">${new Date(appt.arrival_time)}</a><br>`)
+                    `<li><a id="individual" href="${user}/appointments/${appt.id}">${new Date(appt.arrival_time)}</a></li><br>`)
             }))
+
         ;
     });
 });
